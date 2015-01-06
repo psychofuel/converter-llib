@@ -1,3 +1,3 @@
-converter-llib
+converter-lib
 ==============
 @author Ivan
