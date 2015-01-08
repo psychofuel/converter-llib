@@ -15,9 +15,6 @@
  */
 @interface ConverterRegistry : NSObject
 
-
-+ (ConverterRegistry *)sharedConverter;
-
 /**
  * Register specified converter in this converter registry.
  * @param source Class source type
@@ -28,14 +25,13 @@
 - (ConverterRegistry *)registerConverterBySource:(id)sourse byTarget:(id)target andConvertor:(id)convertor;
 
 /**
- * Returns type converter for specified obj-c types.
+ * @return value (has targetClass type)
  *
- * @param source Class source java type
- * @param target Class target java type
+ * @param source  - value
+ * @param target Class target obj-c type
  * @return an instance of {@link Converter}.
  *         <code>null</code> assert - no converter is found.
  */
-- (id)getConverterBySource:(id)sourse andTarget:(id)target;
-
+- (id)convertSource:(id)sourse toTargetClass:(Class)targetClass;
 
 @end
